@@ -10,4 +10,15 @@ $(document).ready(function () {
         $('#preco-max-lbl').html(max);
     });
 
+    $.ajax({
+        url: 'produtos.json',
+        method: 'GET',
+        success: function (data) {
+            for (var i = 0; i < data.length; i++) {
+                var produto = data[i];
+                $('#produtos').append(`<li><a href="#${produto.id}">${produto.nome}</a> - R$ ${produto.preco}</li>`);
+            }
+        }
+    });
+
 });
