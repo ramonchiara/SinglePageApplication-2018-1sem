@@ -34,12 +34,21 @@ $(document).ready(function () {
         for (var i = 0; i < produtos.length; i++) {
             var produto = produtos[i];
             if (produto.preco >= min && produto.preco <= max) {
-                $('#produtos').append(`<li><a href="#${produto.id}">${produto.nome}</a> - R$ ${produto.preco}</li>`);
+                $('#produtos').append(`
+<div class="col-12 col-sm-6 col-md-4">
+    <div class="card">
+        <div class="card-header">${produto.nome}</div>
+        <div class="card-body">
+            <a href="#${produto.id}" class="btn btn-primary">Detalhes</a>
+        </div>
+    </div>
+</div>
+`);
             }
         }
 
         if ($('#produtos').html() === '') {
-            $('#produtos').append(`<li><p class="alert alert-warning">Nenhum produto encontrado.</p></li>`);
+            $('#produtos').append(`<p class="alert alert-warning">Nenhum produto encontrado.</p>`);
         }
     }
 
