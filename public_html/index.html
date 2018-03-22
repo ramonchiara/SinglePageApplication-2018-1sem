@@ -1,16 +1,56 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
-        <title>TODO supply a title</title>
         <meta charset="UTF-8">
+        <title>Minha Loja</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     </head>
     <body>
-        <div>TODO write content</div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Minha Loja</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-sm-3">
+                    <h2>Filtros</h2>
+                    <form action="#">
+                        <div class="form-group">
+                            <label for="preco-min">Preço Mínimo:</label>
+                            <input type="range" id="preco-min" class="form-control" min="0" max="10000" value="0"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="preco-max">Preço Máximo:</label>
+                            <input type="range" id="preco-max" class="form-control" min="0" max="10000" value="10000"/>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-12 col-sm-9">
+                    <h2>Produtos</h2>
+                    <ul>
+                        <li><a href="#1">Produto 1</a> - R$ 100,00</li>
+                        <li><a href="#2">Produto 2</a> - R$ 200,00</li>
+                        <li><a href="#3">Produto 3</a> - R$ 300,00</li>
+                        <li><a href="#4">Produto 4</a> - R$ 400,00</li>
+                        <li><a href="#5">Produto 5</a> - R$ 500,00</li>
+                        <li><a href="#6">Produto 6</a> - R$ 600,00</li>
+                        <li><a href="#7">Produto 7</a> - R$ 700,00</li>
+                        <li><a href="#8">Produto 8</a> - R$ 800,00</li>
+                        <li><a href="#9">Produto 9</a> - R$ 900,00</li>
+                        <li><a href="#10">Produto 10</a> - R$ 1000,00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>Copyright &copy; 2018 - Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </body>
 </html>
