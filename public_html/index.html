@@ -30,16 +30,7 @@
                 <div class="col-12 col-sm-9">
                     <h2>Produtos</h2>
                     <ul>
-                        <li><a href="#1">Produto 1</a> - R$ 100,00</li>
-                        <li><a href="#2">Produto 2</a> - R$ 200,00</li>
-                        <li><a href="#3">Produto 3</a> - R$ 300,00</li>
-                        <li><a href="#4">Produto 4</a> - R$ 400,00</li>
-                        <li><a href="#5">Produto 5</a> - R$ 500,00</li>
-                        <li><a href="#6">Produto 6</a> - R$ 600,00</li>
-                        <li><a href="#7">Produto 7</a> - R$ 700,00</li>
-                        <li><a href="#8">Produto 8</a> - R$ 800,00</li>
-                        <li><a href="#9">Produto 9</a> - R$ 900,00</li>
-                        <li><a href="#10">Produto 10</a> - R$ 1000,00</li>
+                        <li ng-repeat="p in produtos"><a href="#{{p.id}}">{{p.nome}}</a> - R$ {{p.preco}}</li>
                     </ul>
                 </div>
             </div>
