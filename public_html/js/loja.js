@@ -14,14 +14,16 @@ $(document).ready(function () {
 
     var produtos = [];
 
-    $.ajax({
-        url: 'produtos.json',
-        method: 'GET',
-        success: function (data) {
-            produtos = data;
-            mostrarProdutos();
-        }
-    });
+    function carregarProdutos() {
+        $.ajax({
+            url: 'produtos.json',
+            method: 'GET',
+            success: function (data) {
+                produtos = data;
+                mostrarProdutos();
+            }
+        });
+    }
 
     function mostrarProdutos() {
         var min = $('#preco-min').val();
@@ -40,5 +42,33 @@ $(document).ready(function () {
             $('#produtos').append(`<li><p class="alert alert-warning">Nenhum produto encontrado.</p></li>`);
         }
     }
+
+    $(window).on('hashchange', function () {
+        var hash = window.location.hash;
+        var id = hash.substring(1);
+
+        if (id === '') {
+            $('#view').load('views/principal.html', carregarProdutos);
+        } else {
+            $('#view').load('views/produto.html', function () {
+                carregarProduto(id);
+            });
+        }
+    });
+
+    function carregarProduto(id) {
+        for (var i = 0; i < produtos.length; i++) {
+            var produto = produtos[i];
+            if (produto.id == id) {
+                $('#nome').html(produto.nome);
+                $('#imagem').attr('src', `https://picsum.photos/150/150?image=${produto.id}`);
+                $('#imagem').attr('alt', produto.nome);
+                $('#preco').html(produto.preco);
+                break;
+            }
+        }
+    }
+
+    $('#view').load('views/principal.html', carregarProdutos);
 
 });
