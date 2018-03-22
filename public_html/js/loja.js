@@ -11,4 +11,8 @@ loja.controller('principal', function ($scope, $http) {
         $scope.produtos = response.data;
     });
 
+    $scope.filtro = function (produto) {
+        return produto.preco >= $scope.min && produto.preco <= $scope.max;
+    };
+
 });

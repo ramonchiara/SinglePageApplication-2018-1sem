@@ -30,7 +30,8 @@
                 <div class="col-12 col-sm-9">
                     <h2>Produtos</h2>
                     <ul>
-                        <li ng-repeat="p in produtos"><a href="#{{p.id}}">{{p.nome}}</a> - R$ {{p.preco}}</li>
+                        <li ng-repeat="p in produtos| filter: filtro as filtrado"><a href="#{{p.id}}">{{p.nome}}</a> - R$ {{p.preco}}</li>
+                        <li ng-if="filtrado.length === 0" class="alert alert-warning">Nenhum produto encontrado.</li>
                     </ul>
                 </div>
             </div>
