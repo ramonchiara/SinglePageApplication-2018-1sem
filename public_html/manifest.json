@@ -1,5 +1,11 @@
 {
- "name": "App",
+ "name": "Minha Loja",
+ "short_name": "Lojinha",
+ "lang": "pt-BR",
+ "start_url": "/SinglePageApplication-2018-1sem/public_html/#!/",
+ "scope": "/SinglePageApplication-2018-1sem/public_html/",
+ "display": "standalone",
+ "theme_color": "#666600",
  "icons": [
   {
    "src": "\/android-icon-36x36.png",
